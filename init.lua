@@ -11,12 +11,18 @@ minetest.register_node("green_screen:greenscreen", {
 })
 
 minetest.register_alias("greenscreen", "green_screen:greenscreen")
-
-minetest.register_craft({
-  type = "cooking",
-  burntime = 2,
-  output = "green_screen:greenscreen 10",
-  recipe = "wool:green",
-})
-
-print('[green_screen] loaded.')
+if minetest.get_modpath("mcl_wool") then
+    minetest.register_craft({
+    type = "cooking",
+    burntime = 2,
+    output = "green_screen:greenscreen 10",
+    recipe = "mcl_wool:green",
+    })
+else
+    minetest.register_craft({
+    type = "cooking",
+    burntime = 2,
+    output = "green_screen:greenscreen 10",
+    recipe = "wool:green",
+    })
+end
