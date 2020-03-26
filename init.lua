@@ -11,6 +11,7 @@ minetest.register_node("green_screen:greenscreen", {
 })
 
 minetest.register_alias("greenscreen", "green_screen:greenscreen")
+local bloque=""
 if minetest.get_modpath("mcl_wool") then
   bloque="mcl_wool:green"
 else
